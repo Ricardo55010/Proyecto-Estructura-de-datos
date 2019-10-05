@@ -3,4 +3,5 @@ Sistema computacional para el registro de citas de un consultorio médico median
 ## *Integrantes*
 1. Rivera Pérez Ricardo
 2. Montoya Uribe Miguel Angel
+3. Alanis Garduño Mireya
 ### *Grupo : 1CV10*
