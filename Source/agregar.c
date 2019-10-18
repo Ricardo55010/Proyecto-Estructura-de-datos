@@ -1,8 +1,6 @@
-#include<stdio.h>
-#include<stdlib.h>
 
 int
-main (struct cita *cita, char nombre[20])
+agregarRegistroCola (struct cita *cita, char nombre[20])
 {
   if (cita == NULL)
     {

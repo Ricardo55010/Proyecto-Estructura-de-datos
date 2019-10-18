@@ -1,8 +1,5 @@
-#include<stdio.h>
-#include<stdlib.h>
-
 int
-main (struct cita *cita)
+actualizarRegistroCola (struct cita *cita)
 {
   mostrarRegistroCola (cita);
   int n;
