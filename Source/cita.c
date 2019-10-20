@@ -1,6 +1,6 @@
 #include"cita.h"
 int
-agregarRegistroCola (struct cita *cita, char nombre)
+agregarRegistroCola (struct cita *cita, char nombre[20])
 {
   if (cita == NULL)
     {
@@ -29,39 +29,38 @@ agregarRegistroCola (struct cita *cita, char nombre)
     }
 }
 
-
-
-
-int
+int 
 actualizarRegistroCola (struct cita *cita)
+  
 {
   int n;
-  char nombre[20];
-  mostrar (cita);
+   char nombre[20];
   printf ("Ingrese el nombre de la persona que desea modificar\n");
-  scanf ("%s", &nombre);
-  n = buscar (cita, nombre);
-  if (n == -1)
+scanf("%s",nombre);
+n=buscarRegistroCola(cita,nombre);
+
+if (n == -1)
+  
     {
-      printf ("Lo sentimos el elemento no existe \n");
-      return 0;
-    }
+       printf ("Lo sentimos el elemento no existe \n");
+       return 0;
+}    
+  
   else
+    
     {
-
-      for (int i = 0; i < 20; i++)
+       for (int i = 0; i < 20; i++)
+	
 	{
-
-	  cita->nombrePaciente[n][i] = nombre[i];
+	   cita->nombrePaciente[n][i] = nombre[i];
 	}
       printf ("Se ha actualizado el registro correctamente\n");
-      return 0;
-
+       return 0;
     }
-
-
-  return 0;
+   return 0;
 }
+
+
 
 void
 mostrarRegistroSolo (int posicion, struct cita cita)
