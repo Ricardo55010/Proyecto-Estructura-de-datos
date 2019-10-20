@@ -2,6 +2,7 @@
 int
 agregarRegistroCola (struct cita *cita, char nombre[20])
 {
+  int i = 0;
   if (cita == NULL)
     {
       printf ("No se pudo encontrar la cita\n");
@@ -18,7 +19,7 @@ agregarRegistroCola (struct cita *cita, char nombre[20])
 	}
       else
 	{
-	  for (int i = 0; i < 20; i++)
+	  for (i = 0; i < 20; i++)
 	    {
 	      cita->nombrePaciente[20 - (cita->n)][i] = nombre[i];
 	    }
@@ -29,123 +30,169 @@ agregarRegistroCola (struct cita *cita, char nombre[20])
     }
 }
 
-int 
+int
 actualizarRegistroCola (struct cita *cita)
-  
 {
+  int i = 0;
   int n;
-   char nombre[20];
+  char nombre[20];
   printf ("Ingrese el nombre de la persona que desea modificar\n");
-scanf("%s",nombre);
-n=buscarRegistroCola(cita,nombre);
+  scanf ("%s", nombre);
+  n = buscarRegistroCola (cita, nombre);
 
-if (n == -1)
-  
+  if (n == -1)
+
     {
-       printf ("Lo sentimos el elemento no existe \n");
-       return 0;
-}    
-  
+      printf ("Lo sentimos el elemento no existe \n");
+      return 0;
+    }
+
   else
-    
+
     {
-       for (int i = 0; i < 20; i++)
-	
+      for (i = 0; i < 20; i++)
+
 	{
-	   cita->nombrePaciente[n][i] = nombre[i];
+	  cita->nombrePaciente[n][i] = nombre[i];
 	}
       printf ("Se ha actualizado el registro correctamente\n");
-       return 0;
+      return 0;
     }
-   return 0;
+  return 0;
 }
 
 
 
 void
-mostrarRegistroSolo (int posicion, struct cita cita)
+mostrarRegistroSolo (int posicion, struct cita *cita)
 {
   switch (posicion)
     {
     case 0:
-      printf ("Nombre: %s	Hora de cita: 10:00 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s	Hora de cita: 10:00 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 1:
-      printf ("Nombre: %s      Hora de cita: 10:30 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 10:30 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 2:
-      printf ("Nombre: %s      Hora de cita: 11:00 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 11:00 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 3:
-      printf ("Nombre: %s      Hora de cita: 11:30 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 11:30 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 4:
-      printf ("Nombre: %s      Hora de cita: 12:00 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 12:00 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 5:
-      printf ("Nombre: %s      Hora de cita: 12:30 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 12:30 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 6:
-      printf ("Nombre: %s      Hora de cita: 13:00 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 13:00 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 7:
-      printf ("Nombre: %s      Hora de cita: 13:30 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 13:30 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 8:
-      printf ("Nombre: %s      Hora de cita: 14:00 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 14:00 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 9:
-      printf ("Nombre: %s      Hora de cita: 14:30 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 14:30 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 10:
-      printf ("Nombre: %s      Hora de cita: 15:00 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 15:00 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 11:
-      printf ("Nombre: %s      Hora de cita: 16:00 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 16:00 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 12:
-      printf ("Nombre: %s      Hora de cita: 16:30 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 16:30 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 13:
-      printf ("Nombre: %s      Hora de cita: 17:00 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 17:00 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 14:
-      printf ("Nombre: %s      Hora de cita: 17:30 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 17:30 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 15:
-      printf ("Nombre: %s      Hora de cita: 18:00 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 18:00 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 16:
-      printf ("Nombre: %s      Hora de cita: 18:30 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 18:30 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 17:
-      printf ("Nombre: %s      Hora de cita: 19:00 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 19:00 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 18:
-      printf ("Nombre: %s      Hora de cita: 19:30 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 19:30 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 19:
-      printf ("Nombre: %s      Hora de cita: 20:00 hrs\n",
-	      cita.nombrePaciente[posicion]);
+      printf ("Cita n° %d	Nombre: %s      Hora de cita: 20:00 hrs\n",
+	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
+    }
+}
+
+
+int
+buscarRegistroCola (struct cita *cita, char nombre[20])
+{
+  int posicion;
+  int i = 0;
+  int cont = 0;
+  if (cita->nombrePaciente == NULL)
+    {
+      return -1;
+    }
+  for (i = 0; i != 20; i++)
+    {
+      if (strcmp (cita->nombrePaciente[i], nombre) == 0)
+	{
+	  cont++;
+	}
+    }
+  if (cont == 0)
+    {
+      return -1;
+    }
+  if (cont == 1)
+    {
+      for (i = 0; i != 20; i++)
+	{
+	  if (strcmp (cita->nombrePaciente[i], nombre) == 0)
+	    {
+	      mostrarRegistroSolo (i, cita);
+	      return i;
+	    }
+	}
+    }
+  if (cont >= 2)
+    {
+      for (i = 0; i != 20; i++)
+	{
+	  if (strcmp (cita->nombrePaciente[i], nombre) == 0)
+	    {
+	      mostrarRegistroSolo (i, cita);
+	      return 20;
+	    }
+	}
     }
 }
