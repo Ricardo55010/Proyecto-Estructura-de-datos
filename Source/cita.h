@@ -3,6 +3,7 @@
 
 #include<stdlib.h>
 #include<stdio.h>
+#include<string.h>
 struct cita
 {
   char nombrePaciente[20][20];
