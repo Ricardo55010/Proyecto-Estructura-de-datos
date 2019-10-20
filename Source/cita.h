@@ -10,8 +10,8 @@ struct cita
   int tamano;
 };
 
-int agregarRegistroCola (struct cita *, char);
+int agregarRegistroCola (struct cita *, char[20]);
 int actualizarRegistroCola (struct cita *);
-int buscarRegistroCola (struct cita *, char);
+int buscarRegistroCola (struct cita *, char[20]);
 void mostrarRegistroSolo (int, struct cita);
 #endif
