@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<stdlib.h>
+#include<string.h>
 struct cita
 {
   char nombrePaciente[20][20];	//arreglo para guardar las 16 citas y los 4 tiempos libres

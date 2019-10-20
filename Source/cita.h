@@ -1,7 +1,6 @@
 #ifndef __CITA_H__
 #define __CITA_H__
 
-#include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
 struct cita
@@ -13,4 +12,6 @@ struct cita
 
 int agregarRegistroCola (struct cita *, char);
 int actualizarRegistroCola (struct cita *);
+int buscarRegistroCola (struct cita *, char);
+void mostrarRegistroSolo (int, struct cita);
 #endif
