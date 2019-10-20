@@ -18,10 +18,10 @@ agregarRegistroCola (struct cita *cita, char nombre)
 	}
       else
 	{
-	  printf ("Ingrese su nombre\n");
-	  scanf ("%s", &nombre);
-
-	  cita->nombrePaciente[20 - (cita->n)] = nombre;
+	  for (int i = 0; i < 20; i++)
+	    {
+	    cita->nombrePaciente[20 - (cita->n)][i] = nombre[i]:
+	    }
 	  (cita->n)--;
 	  printf ("La cita ha sido agendada satisfactoriamente\n");
 	  return 0;
@@ -35,15 +35,29 @@ agregarRegistroCola (struct cita *cita, char nombre)
 int
 actualizarRegistroCola (struct cita *cita)
 {
-  mostrarRegistroCola (cita);
   int n;
   char nombre[20];
-  printf ("Que registro desea actualizar\n");
-  scanf ("%i", &n);
-  printf ("ingrese la nueva cita\n");
-  scanf ("%s", &nombre[20]);
-  cita->nombrePaciente[20][n] = nombre[20];
+  mostrar (cita);
+  printf ("Ingrese el nombre de la persona que desea modificar\n");
+  scanf ("%s", &nombre);
+  n = buscar (cita, nombre);
+  if (n == -1)
+    {
+      printf ("Lo sentimos el elemento no existe \n");
+      return 0;
+    }
+  else
+    {
 
+      for (int i = 0; i < 20; i++)
+	{
+
+	  cita->nombreRegistro[n][i] = nombre[i];
+	}
+      printf ("Se ha actualizado el registro correctamente\n");
+      return 0;
+
+    }
 
 
   return 0;
