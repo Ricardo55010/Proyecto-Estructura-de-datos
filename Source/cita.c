@@ -1,6 +1,6 @@
 #include"cita.h"
 int
-agregarRegistroCola (struct cita *cita, char nombre[20])
+agregarRegistroCola (struct cita *cita, char nombre)
 {
   if (cita == NULL)
     {
@@ -19,9 +19,9 @@ agregarRegistroCola (struct cita *cita, char nombre[20])
       else
 	{
 	  printf ("Ingrese su nombre\n");
-	  scanf ("%s", &nombre[20]);
+	  scanf ("%s", &nombre);
 
-	  cita->nombrePaciente[20 - (cita->n)][20] = nombre[20];
+	  cita->nombrePaciente[20 - (cita->n)] = nombre;
 	  (cita->n)--;
 	  printf ("La cita ha sido agendada satisfactoriamente\n");
 	  return 0;
