@@ -54,17 +54,15 @@ actualizarRegistroCola (struct cita *cita)
       printf ("Ingrese el nuevo nombre para la cita\n");
       scanf ("%s", nombren);
 
-      {
-	for (i = 0; i < 20; i++)
+      for (i = 0; i < 20; i++)
 
-	  {
-	    cita->nombrePaciente[n][i] = nombren[i];
-	  }
-	printf ("Se ha actualizado el registro correctamente\n");
-	return 0;
-      }
+	{
+	  cita->nombrePaciente[n][i] = nombren[i];
+	}
+      printf ("Se ha actualizado el registro correctamente\n");
       return 0;
     }
+  return 0;
 }
 
 
