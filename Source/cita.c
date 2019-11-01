@@ -40,7 +40,10 @@ actualizarRegistroCola (struct cita *cita)
   printf ("Ingrese el nombre de la persona que desea modificar\n");
   scanf ("%s", nombre);
   n = buscarRegistroCola (cita, nombre);
-
+if (cita==NULL){
+printf("No se pudo encontra la cita\n");
+return 0;}
+else {
   if (n == -1)
 
     {
@@ -81,6 +84,7 @@ actualizarRegistroCola (struct cita *cita)
 	  return 0;
 	}
     }
+}
 }
 
 
