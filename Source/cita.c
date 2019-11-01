@@ -40,51 +40,54 @@ actualizarRegistroCola (struct cita *cita)
   printf ("Ingrese el nombre de la persona que desea modificar\n");
   scanf ("%s", nombre);
   n = buscarRegistroCola (cita, nombre);
-if (cita==NULL){
-printf("No se pudo encontra la cita\n");
-return 0;}
-else {
-  if (n == -1)
-
+  if (cita == NULL)
     {
-      printf ("Lo sentimos el elemento no existe \n");
+      printf ("No se pudo encontra la cita\n");
       return 0;
     }
-
   else
     {
-      if (n != 20)
+      if (n == -1)
+
 	{
-	  printf ("Se encontro el nombre a modificar\n");
-	  printf ("Ingrese el nuevo nombre para la cita\n");
-	  scanf ("%s", nombren);
-
-	  for (i = 0; i < 20; i++)
-
-	    {
-	      cita->nombrePaciente[n][i] = nombren[i];
-	    }
-	  printf ("Se ha actualizado el registro correctamente\n");
+	  printf ("Lo sentimos el elemento no existe \n");
 	  return 0;
 	}
+
       else
 	{
-	  printf
-	    ("Existe mas de una cita con un nombre similar\n Ingrese el numero del elemento que de sea actualizar\n");
-	  scanf ("%i", &n);
-	  printf ("Ingrese el nuevo nombre para la cita\n");
-	  scanf ("%s", nombren);
-
-	  for (i = 0; i < 20; i++)
-
+	  if (n != 20)
 	    {
-	      cita->nombrePaciente[n][i] = nombren[i];
+	      printf ("Se encontro el nombre a modificar\n");
+	      printf ("Ingrese el nuevo nombre para la cita\n");
+	      scanf ("%s", nombren);
+
+	      for (i = 0; i < 20; i++)
+
+		{
+		  cita->nombrePaciente[n][i] = nombren[i];
+		}
+	      printf ("Se ha actualizado el registro correctamente\n");
+	      return 0;
 	    }
-	  printf ("Se ha actualizado el registro correctamente\n");
-	  return 0;
+	  else
+	    {
+	      printf
+		("Existe mas de una cita con un nombre similar\n Ingrese el numero del elemento que de sea actualizar\n");
+	      scanf ("%i", &n);
+	      printf ("Ingrese el nuevo nombre para la cita\n");
+	      scanf ("%s", nombren);
+
+	      for (i = 0; i < 20; i++)
+
+		{
+		  cita->nombrePaciente[n][i] = nombren[i];
+		}
+	      printf ("Se ha actualizado el registro correctamente\n");
+	      return 0;
+	    }
 	}
     }
-}
 }
 
 
