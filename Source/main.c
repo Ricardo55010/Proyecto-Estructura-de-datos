@@ -1,4 +1,16 @@
 #include"cita.h"
+
+void
+mostrar_menu (void)
+{
+  puts
+    ("	Bienvenido al sistema de registro de citas del consultorio ''Similares''\n");
+  puts ("Seleccione una opcion por favor\n\n");
+  puts ("1-. Agendar una cita\n2-. Consultar la cita.\n3-. Cancelar la cita");
+  puts
+    ("4-. Modificar su cita\n5-. Mostrar todas las citas para el dia.\n6-. Salir");
+}
+
 int
 main (void)
 {
@@ -12,11 +24,8 @@ main (void)
   struct cita Viernes;
   struct cita Sabado;
   int opcion = 0;
-  printf
-    ("	Bienvenido al sistema de registro de citas del consultorio ''Similares''\n");
-  printf ("Seleccione una opcion por favor\n");
-  printf
-    ("1-. Agendar una cita	2-.Consultar la cita\n3-. Cancelar la cita	4-. Modificar su cita\n5-.Mostrar todas las citas para el dia	6-.Salir");
+
+  mostrar_menu ();
   scanf ("%d", &opcion);
   switch (opcion)
     {
