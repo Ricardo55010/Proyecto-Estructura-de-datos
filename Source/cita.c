@@ -1,4 +1,5 @@
 #include"cita.h"
+
 int
 agregarRegistroCola (struct cita *cita, char nombre[20])
 {
@@ -207,7 +208,6 @@ buscarRegistroCola (struct cita *cita, char nombre[20])
 	{
 	  if (strcmp (cita->nombrePaciente[i], nombre) == 0)
 	    {
-	      mostrarRegistroSolo (i, cita);
 	      return i;
 	    }
 	}
