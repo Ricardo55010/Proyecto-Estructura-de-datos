@@ -24,8 +24,10 @@ agregarRegistroCola (struct cita *cita, char nombre[20])
 	    {
 	      cita->nombrePaciente[20 - (cita->n)][i] = nombre[i];
 	    }
+	  printf ("La cita ha sido agendada satisfactoriamente %s\n",
+		  cita->nombrePaciente[20 - (cita->n)]);
 	  (cita->n)--;
-	  printf ("La cita ha sido agendada satisfactoriamente\n");
+
 	  return 0;
 	}
     }
