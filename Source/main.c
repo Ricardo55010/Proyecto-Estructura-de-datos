@@ -41,7 +41,7 @@ main (void)
 	  if (pos > -1 && pos < 20)
 	    {
 	      printf ("\nCita encontrada\n");
-	      buscarRegistroSolo (pos, &Lunes);
+	      mostrarRegistroSolo (pos, &Lunes);
 	    }
 	  if (pos == 20)
 	    {
@@ -57,7 +57,7 @@ main (void)
 	  if (pos > -1 && pos < 20)
 	    {
 	      printf ("\nCita encontrada\n");
-	      buscarRegistroSolo (pos, &Martes);
+	      mostrarRegistroSolo (pos, &Martes);
 	    }
 	  if (pos == 20)
 	    {
@@ -73,7 +73,7 @@ main (void)
 	  if (pos > -1 && pos < 20)
 	    {
 	      printf ("\nCita encontrada\n");
-	      buscarRegistroSolo (pos, &Miercoles);
+	      mostrarRegistroSolo (pos, &Miercoles);
 	    }
 	  if (pos == 20)
 	    {
@@ -89,7 +89,7 @@ main (void)
 	  if (pos > -1 && pos < 20)
 	    {
 	      printf ("\nCita encontrada\n");
-	      buscarRegistroSolo (pos, &Jueves);
+	      mostrarRegistroSolo (pos, &Jueves);
 	    }
 	  if (pos == 20)
 	    {
@@ -105,7 +105,7 @@ main (void)
 	  if (pos > -1 && pos < 20)
 	    {
 	      printf ("\nCita encontrada\n");
-	      buscarRegistroSolo (pos, &Viernes);
+	      mostrarRegistroSolo (pos, &Viernes);
 	    }
 	  if (pos == 20)
 	    {
@@ -121,7 +121,7 @@ main (void)
 	  if (pos > -1 && pos < 20)
 	    {
 	      printf ("\nCita encontrada\n");
-	      buscarRegistroSolo (pos, &Sabado);
+	      mostrarRegistroSolo (pos, &Sabado);
 	    }
 	  if (pos == 20)
 	    {
@@ -135,7 +135,7 @@ main (void)
       break;
     case 3:
       printf ("Ingrese el dia de la cita a cancelar\n");
-      ("1-. Lunes	2-. Martes	3-.Miercoles\n4-. Jueves	5-. Viernes	6-. Sabado");
+      printf("1-. Lunes	2-. Martes	3-.Miercoles\n4-. Jueves	5-. Viernes	6-. Sabado");
       scanf ("%d", &auxiliar);
       switch (auxiliar)
 	{

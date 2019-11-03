@@ -184,7 +184,6 @@ mostrarRegistroSolo (int posicion, struct cita *cita)
 int
 buscarRegistroCola (struct cita *cita, char nombre[20])
 {
-  int posicion;
   int i = 0;
   int cont = 0;
   if (cita->nombrePaciente == NULL)
