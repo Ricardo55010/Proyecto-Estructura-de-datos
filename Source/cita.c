@@ -222,6 +222,7 @@ buscarRegistroCola (struct cita *cita, char nombre[20])
 	    }
 	}
     }
+  return 0;
 }
 
 void
