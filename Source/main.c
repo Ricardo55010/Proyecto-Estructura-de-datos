@@ -22,7 +22,41 @@ main (void)
     {
     case 1:
 //Agendar
+      printf ("Agendando cita\n");
+      printf ("Ingrese su nombre por favor: ");
+      scanf ("%s", nombre);
+      printf ("\nSeleccione el dia que quiere su cita:\n ");
+      printf
+	("1-. Lunes     2-. Martes      3-.Miercoles\n4-. Jueves        5-. Viernes     6-. Sabado");
+      scanf ("%d", &auxiliar);
+      switch (auxiliar)
+	{
+	case 1:
+	  agregarRegistroCola (&Lunes, nombre);
+	  break;
+	case 2:
+	  agregarRegistroCola (&Martes, nombre);
+	  break;
+	case 3:
+	  agregarRegistroCola (&Miercoles, nombre);
+	  break;
+	case 4:
+	  agregarRegistroCola (&Jueves, nombre);
+	  break;
+	case 5:
+	  agregarRegistroCola (&Viernes, nombre);
+	  break;
+	case 6:
+	  agregarRegistroCola (&Sabado, nombre);
+	  break;
+
+	default:
+	  printf ("No existe\n");
+	  break;
+	}
+
       break;
+
     case 2:
       printf ("Ingrese su nombre por favor: ");
       scanf ("%s", nombre);
@@ -135,7 +169,8 @@ main (void)
       break;
     case 3:
       printf ("Ingrese el dia de la cita a cancelar\n");
-      printf("1-. Lunes	2-. Martes	3-.Miercoles\n4-. Jueves	5-. Viernes	6-. Sabado");
+      printf
+	("1-. Lunes	2-. Martes	3-.Miercoles\n4-. Jueves	5-. Viernes	6-. Sabado");
       scanf ("%d", &auxiliar);
       switch (auxiliar)
 	{
@@ -164,6 +199,35 @@ main (void)
       break;
     case 4:
 //MOdificar
+      printf ("Modificando cita");
+      printf ("\nSeleccione el dia que escogio previamente para su cita:\n ");
+      printf
+	("1-. Lunes     2-. Martes      3-.Miercoles\n4-. Jueves        5-. Viernes     6-. Sabado");
+      scanf ("%d", &auxiliar);
+      switch (auxiliar)
+	{
+	case 1:
+	  actualizarRegistroCola (&Lunes);
+	  break;
+	case 2:
+	  actualizarRegistroCola (&Martes);
+	  break;
+	case 3:
+	  actualizarRegistroCola (&Miercoles);
+	  break;
+	case 4:
+	  actualizarRegistroCola (&Jueves);
+	  break;
+	case 5:
+	  actualizarRegistroCola (&Viernes);
+	  break;
+	case 6:
+	  actualizarRegistroCola (&Sabado);
+	  break;
+	default:
+	  printf ("No existe\n");
+	  break;
+	}
       break;
     case 5:
 //Mostrar todas las citas
