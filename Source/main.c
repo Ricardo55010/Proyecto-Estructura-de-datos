@@ -23,6 +23,13 @@ main (void)
   struct cita Jueves;
   struct cita Viernes;
   struct cita Sabado;
+  Lunes.n = 20;
+  Martes.n = 20;
+  Miercoles.n = 20;
+  Jueves.n = 20;
+  Viernes.n = 20;
+  Sabado.n = 20;
+
   int opcion = 0;
 
   mostrar_menu ();
