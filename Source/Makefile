@@ -10,4 +10,5 @@ run: a.out
 	./a.out
 clear:
 	rm -fr a.out main.o cita.o menu.o cita.c~ cita.h~ menu.c~ menu.h~ main.c~
-	
+indent: main.c cita.c menu.c cita.h menu.h
+	indent main.c cita.c menu.c cita.h menu.h
