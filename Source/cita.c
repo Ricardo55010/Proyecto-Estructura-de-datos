@@ -268,3 +268,45 @@ eliminarRegistroCola (struct cita *cita, char nombre[20])
       return;
     }
 }
+
+void
+atenderCita (struct cita *cita, char nombre[20])
+{
+  int posicion = 0;
+  char estado[20] = { 'A', 't', 'e', 'n', 'd', 'i', 'd', 'o' };
+  if (cita->nombrePaciente == NULL)
+    {
+      return;
+    }
+  posicion = buscarRegistroCola (cita, nombre);
+  if (posicion == -1)
+    {
+      printf ("\nCita no encontrada\n");
+      return;
+    }
+  if (posicion > -1 && posicion < 20)
+    {
+      int i = 0;
+      for (i = 0; i != 20; i++)
+	{
+	  cita->nombrePaciente[posicion][i] = estado[i];
+	}
+      printf ("\nCita atendida\n");
+      return;
+    }
+  if (posicion == 20)
+    {
+      int i = 0;
+      int tmp = 0;
+      printf
+	("\nHay mas de una cita registrada con el mismo nombre, favor de poner cual cita es la de usted :");
+      scanf ("%d", &tmp);
+      tmp = tmp - 1;
+      for (i = 0; i != 20; i++)
+	{
+	  cita->nombrePaciente[posicion][i] = estado[i];
+	}
+      printf ("\nCita atendida\n");
+      return;
+    }
+}
