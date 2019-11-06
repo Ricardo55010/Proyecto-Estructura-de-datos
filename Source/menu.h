@@ -1,5 +1,5 @@
-#ifndef __CITA_H__
-#define __CITA_H__
+#ifndef __MENU_H__
+#define __MENU_H__
 
 #include<stdio.h>
 void mostrar_menu (void);

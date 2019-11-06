@@ -4,6 +4,5 @@
 int
 main (void)
 {
-  mostrar_menu ();
   seleccionarOpcionMenu ();
 }

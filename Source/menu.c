@@ -32,223 +32,228 @@ seleccionarOpcionMenu (void)
   Sabado.n = 20;
 
   int opcion = 0;
-
-  scanf ("%d", &opcion);
-  switch (opcion)
+  do
     {
-    case 1:
+      mostrar_menu ();
+      scanf ("%d", &opcion);
+      switch (opcion)
+	{
+	case 1:
 //Agendar
-      printf ("Agendando cita\n");
-      printf ("Ingrese su nombre por favor: ");
-      scanf ("%s", nombre);
-      printf ("\nSeleccione el dia que quiere su cita:\n ");
-      printf
-	("1-. Lunes     2-. Martes      3-.Miercoles\n4-. Jueves        5-. Viernes     6-. Sabado");
-      scanf ("%d", &auxiliar);
-      switch (auxiliar)
-	{
-	case 1:
-	  agregarRegistroCola (&Lunes, nombre);
+	  printf ("Agendando cita\n");
+	  printf ("Ingrese su nombre por favor: ");
+	  scanf ("%s", nombre);
+	  printf ("\nSeleccione el dia que quiere su cita:\n ");
+	  printf
+	    ("1-. Lunes     2-. Martes      3-.Miercoles\n4-. Jueves        5-. Viernes     6-. Sabado");
+	  scanf ("%d", &auxiliar);
+	  switch (auxiliar)
+	    {
+	    case 1:
+	      agregarRegistroCola (&Lunes, nombre);
+	      break;
+	    case 2:
+	      agregarRegistroCola (&Martes, nombre);
+	      break;
+	    case 3:
+	      agregarRegistroCola (&Miercoles, nombre);
+	      break;
+	    case 4:
+	      agregarRegistroCola (&Jueves, nombre);
+	      break;
+	    case 5:
+	      agregarRegistroCola (&Viernes, nombre);
+	      break;
+	    case 6:
+	      agregarRegistroCola (&Sabado, nombre);
+	      break;
+
+	    default:
+	      printf ("No existe\n");
+	      break;
+	    }
+
 	  break;
+
 	case 2:
-	  agregarRegistroCola (&Martes, nombre);
+	  printf ("Ingrese su nombre por favor: ");
+	  scanf ("%s", nombre);
+	  printf ("\nSeleccione el dia de la cita: ");
+	  printf
+	    ("1-. Lunes	2-. Martes	3-.Miercoles\n4-. Jueves	5-. Viernes	6-. Sabado");
+	  scanf ("%d", &auxiliar);
+	  switch (auxiliar)
+	    {
+	    case 1:
+	      pos = buscarRegistroCola (&Lunes, nombre);
+	      if (pos == -1)
+		{
+		  printf ("\nNo existe ese nombre en este dia\n");
+		}
+	      if (pos > -1 && pos < 20)
+		{
+		  printf ("\nCita encontrada\n");
+		  mostrarRegistroSolo (pos, &Lunes);
+		}
+	      if (pos == 20)
+		{
+		  printf ("\nCitas encontradas con el mismo nombre");
+		}
+	      break;
+	    case 2:
+	      pos = buscarRegistroCola (&Martes, nombre);
+	      if (pos == -1)
+		{
+		  printf ("\nNo existe ese nombre en este dia\n");
+		}
+	      if (pos > -1 && pos < 20)
+		{
+		  printf ("\nCita encontrada\n");
+		  mostrarRegistroSolo (pos, &Martes);
+		}
+	      if (pos == 20)
+		{
+		  printf ("\nCitas encontradas con el mismo nombre");
+		}
+	      break;
+	    case 3:
+	      pos = buscarRegistroCola (&Miercoles, nombre);
+	      if (pos == -1)
+		{
+		  printf ("\nNo existe ese nombre en este dia\n");
+		}
+	      if (pos > -1 && pos < 20)
+		{
+		  printf ("\nCita encontrada\n");
+		  mostrarRegistroSolo (pos, &Miercoles);
+		}
+	      if (pos == 20)
+		{
+		  printf ("\nCitas encontradas con el mismo nombre");
+		}
+	      break;
+	    case 4:
+	      pos = buscarRegistroCola (&Jueves, nombre);
+	      if (pos == -1)
+		{
+		  printf ("\nNo existe ese nombre en este dia\n");
+		}
+	      if (pos > -1 && pos < 20)
+		{
+		  printf ("\nCita encontrada\n");
+		  mostrarRegistroSolo (pos, &Jueves);
+		}
+	      if (pos == 20)
+		{
+		  printf ("\nCitas encontradas con el mismo nombre");
+		}
+	      break;
+	    case 5:
+	      pos = buscarRegistroCola (&Viernes, nombre);
+	      if (pos == -1)
+		{
+		  printf ("\nNo existe ese nombre en este dia\n");
+		}
+	      if (pos > -1 && pos < 20)
+		{
+		  printf ("\nCita encontrada\n");
+		  mostrarRegistroSolo (pos, &Viernes);
+		}
+	      if (pos == 20)
+		{
+		  printf ("\nCitas encontradas con el mismo nombre");
+		}
+	      break;
+	    case 6:
+	      pos = buscarRegistroCola (&Sabado, nombre);
+	      if (pos == -1)
+		{
+		  printf ("\nNo existe ese nombre en este dia\n");
+		}
+	      if (pos > -1 && pos < 20)
+		{
+		  printf ("\nCita encontrada\n");
+		  mostrarRegistroSolo (pos, &Sabado);
+		}
+	      if (pos == 20)
+		{
+		  printf ("\nCitas encontradas con el mismo nombre");
+		}
+	      break;
+	    default:
+	      printf ("\nNo existe\n");
+	      break;
+	    }
 	  break;
 	case 3:
-	  agregarRegistroCola (&Miercoles, nombre);
-	  break;
-	case 4:
-	  agregarRegistroCola (&Jueves, nombre);
-	  break;
-	case 5:
-	  agregarRegistroCola (&Viernes, nombre);
-	  break;
-	case 6:
-	  agregarRegistroCola (&Sabado, nombre);
-	  break;
+	  printf ("Ingrese el dia de la cita a cancelar\n");
+	  printf
+	    ("1-. Lunes	2-. Martes	3-.Miercoles\n4-. Jueves	5-. Viernes	6-. Sabado");
+	  scanf ("%d", &auxiliar);
+	  switch (auxiliar)
+	    {
+	    case 1:
+	      eliminarRegistroCola (&Lunes, nombre);
+	      break;
+	    case 2:
+	      eliminarRegistroCola (&Martes, nombre);
+	      break;
+	    case 3:
+	      eliminarRegistroCola (&Miercoles, nombre);
+	      break;
+	    case 4:
+	      eliminarRegistroCola (&Jueves, nombre);
+	      break;
+	    case 5:
+	      eliminarRegistroCola (&Viernes, nombre);
+	      break;
+	    case 6:
+	      eliminarRegistroCola (&Sabado, nombre);
+	      break;
+	    default:
 
-	default:
-	  printf ("No existe\n");
-	  break;
-	}
-
-      break;
-
-    case 2:
-      printf ("Ingrese su nombre por favor: ");
-      scanf ("%s", nombre);
-      printf ("\nSeleccione el dia de la cita: ");
-      printf
-	("1-. Lunes	2-. Martes	3-.Miercoles\n4-. Jueves	5-. Viernes	6-. Sabado");
-      scanf ("%d", &auxiliar);
-      switch (auxiliar)
-	{
-	case 1:
-	  pos = buscarRegistroCola (&Lunes, nombre);
-	  if (pos == -1)
-	    {
-	      printf ("\nNo existe ese nombre en este dia\n");
-	    }
-	  if (pos > -1 && pos < 20)
-	    {
-	      printf ("\nCita encontrada\n");
-	      mostrarRegistroSolo (pos, &Lunes);
-	    }
-	  if (pos == 20)
-	    {
-	      printf ("\nCitas encontradas con el mismo nombre");
-	    }
-	  break;
-	case 2:
-	  pos = buscarRegistroCola (&Martes, nombre);
-	  if (pos == -1)
-	    {
-	      printf ("\nNo existe ese nombre en este dia\n");
-	    }
-	  if (pos > -1 && pos < 20)
-	    {
-	      printf ("\nCita encontrada\n");
-	      mostrarRegistroSolo (pos, &Martes);
-	    }
-	  if (pos == 20)
-	    {
-	      printf ("\nCitas encontradas con el mismo nombre");
-	    }
-	  break;
-	case 3:
-	  pos = buscarRegistroCola (&Miercoles, nombre);
-	  if (pos == -1)
-	    {
-	      printf ("\nNo existe ese nombre en este dia\n");
-	    }
-	  if (pos > -1 && pos < 20)
-	    {
-	      printf ("\nCita encontrada\n");
-	      mostrarRegistroSolo (pos, &Miercoles);
-	    }
-	  if (pos == 20)
-	    {
-	      printf ("\nCitas encontradas con el mismo nombre");
+	      break;
 	    }
 	  break;
 	case 4:
-	  pos = buscarRegistroCola (&Jueves, nombre);
-	  if (pos == -1)
-	    {
-	      printf ("\nNo existe ese nombre en este dia\n");
-	    }
-	  if (pos > -1 && pos < 20)
-	    {
-	      printf ("\nCita encontrada\n");
-	      mostrarRegistroSolo (pos, &Jueves);
-	    }
-	  if (pos == 20)
-	    {
-	      printf ("\nCitas encontradas con el mismo nombre");
-	    }
-	  break;
-	case 5:
-	  pos = buscarRegistroCola (&Viernes, nombre);
-	  if (pos == -1)
-	    {
-	      printf ("\nNo existe ese nombre en este dia\n");
-	    }
-	  if (pos > -1 && pos < 20)
-	    {
-	      printf ("\nCita encontrada\n");
-	      mostrarRegistroSolo (pos, &Viernes);
-	    }
-	  if (pos == 20)
-	    {
-	      printf ("\nCitas encontradas con el mismo nombre");
-	    }
-	  break;
-	case 6:
-	  pos = buscarRegistroCola (&Sabado, nombre);
-	  if (pos == -1)
-	    {
-	      printf ("\nNo existe ese nombre en este dia\n");
-	    }
-	  if (pos > -1 && pos < 20)
-	    {
-	      printf ("\nCita encontrada\n");
-	      mostrarRegistroSolo (pos, &Sabado);
-	    }
-	  if (pos == 20)
-	    {
-	      printf ("\nCitas encontradas con el mismo nombre");
-	    }
-	  break;
-	default:
-	  printf ("\nNo existe\n");
-	  break;
-	}
-      break;
-    case 3:
-      printf ("Ingrese el dia de la cita a cancelar\n");
-      printf
-	("1-. Lunes	2-. Martes	3-.Miercoles\n4-. Jueves	5-. Viernes	6-. Sabado");
-      scanf ("%d", &auxiliar);
-      switch (auxiliar)
-	{
-	case 1:
-	  eliminarRegistroCola (&Lunes, nombre);
-	  break;
-	case 2:
-	  eliminarRegistroCola (&Martes, nombre);
-	  break;
-	case 3:
-	  eliminarRegistroCola (&Miercoles, nombre);
-	  break;
-	case 4:
-	  eliminarRegistroCola (&Jueves, nombre);
-	  break;
-	case 5:
-	  eliminarRegistroCola (&Viernes, nombre);
-	  break;
-	case 6:
-	  eliminarRegistroCola (&Sabado, nombre);
-	  break;
-	default:
-
-	  break;
-	}
-      break;
-    case 4:
 //MOdificar
-      printf ("Modificando cita");
-      printf ("\nSeleccione el dia que escogio previamente para su cita:\n ");
-      printf
-	("1-. Lunes     2-. Martes      3-.Miercoles\n4-. Jueves        5-. Viernes     6-. Sabado");
-      scanf ("%d", &auxiliar);
-      switch (auxiliar)
-	{
-	case 1:
-	  actualizarRegistroCola (&Lunes);
-	  break;
-	case 2:
-	  actualizarRegistroCola (&Martes);
-	  break;
-	case 3:
-	  actualizarRegistroCola (&Miercoles);
-	  break;
-	case 4:
-	  actualizarRegistroCola (&Jueves);
+	  printf ("Modificando cita");
+	  printf
+	    ("\nSeleccione el dia que escogio previamente para su cita:\n ");
+	  printf
+	    ("1-. Lunes     2-. Martes      3-.Miercoles\n4-. Jueves        5-. Viernes     6-. Sabado");
+	  scanf ("%d", &auxiliar);
+	  switch (auxiliar)
+	    {
+	    case 1:
+	      actualizarRegistroCola (&Lunes);
+	      break;
+	    case 2:
+	      actualizarRegistroCola (&Martes);
+	      break;
+	    case 3:
+	      actualizarRegistroCola (&Miercoles);
+	      break;
+	    case 4:
+	      actualizarRegistroCola (&Jueves);
+	      break;
+	    case 5:
+	      actualizarRegistroCola (&Viernes);
+	      break;
+	    case 6:
+	      actualizarRegistroCola (&Sabado);
+	      break;
+	    default:
+	      printf ("No existe\n");
+	      break;
+	    }
 	  break;
 	case 5:
-	  actualizarRegistroCola (&Viernes);
+//Mostrar todas las citas
 	  break;
 	case 6:
-	  actualizarRegistroCola (&Sabado);
-	  break;
-	default:
-	  printf ("No existe\n");
 	  break;
 	}
-      break;
-    case 5:
-//Mostrar todas las citas
-      break;
-    case 6:
-      break;
     }
+  while (opcion != 6);
 }
