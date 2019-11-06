@@ -9,5 +9,5 @@ cita.o: cita.c
 run: a.out
 	./a.out
 clear:
-	rm -fr a.out main.o cita.o menu.o
+	rm -fr a.out main.o cita.o menu.o cita.c~ cita.h~ menu.c~ menu.h~ main.c~
 	
