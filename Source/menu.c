@@ -9,7 +9,7 @@ mostrar_menu (void)
   puts ("Seleccione una opcion por favor\n\n");
   puts ("1-. Agendar una cita\n2-. Consultar la cita.\n3-. Cancelar la cita");
   puts
-    ("4-. Modificar su cita\n5-. Mostrar todas las citas para el dia.\n6-. Salir");
+    ("4-. Modificar su cita\n5-. Mostrar todas las citas para el dia.\n6-. Cita atendida\n7-. Salir");
 }
 
 void
@@ -252,8 +252,37 @@ seleccionarOpcionMenu (void)
 //Mostrar todas las citas
 	  break;
 	case 6:
+	  printf ("Ingrese el dia de la cita atendida\n");
+	  printf
+	    ("1-. Lunes	2-. Martes	3-. MIercoles\n4-. Jueves	5-. Viernes	6-. Sabado");
+	  scanf ("%d", &auxiliar);
+	  switch (auxiliar)
+	    {
+	    case 1:
+	      atenderCita (&Lunes, nombre);
+	      break;
+	    case 2:
+	      atenderCita (&Martes, nombre);
+	      break;
+	    case 3:
+	      atenderCita (&Miercoles, nombre);
+	      break;
+	    case 4:
+	      atenderCita (&Jueves, nombre);
+	      break;
+	    case 5:
+	      atenderCita (&Viernes, nombre);
+	      break;
+	    case 6:
+	      atenderCita (&Sabado, nombre);
+	      break;
+	    default:
+	      break;
+	    }
+	  break;
+	case 7:
 	  break;
 	}
     }
-  while (opcion != 6);
+  while (opcion != 7);
 }
