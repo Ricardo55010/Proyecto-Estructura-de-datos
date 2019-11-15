@@ -20,3 +20,4 @@ Una vez ejectado el programa desplejara una serie de opciones disponibles para e
 1. Al momento de modificar y/o cancelar un registro puede que salgan dos o más registros con el mismo nombre y deberá elegir el suyo
 2. Al momento de agendar si ya no hay espacio en el día seleccionado deberá buscar otro día
 3-.Al momento de consultar si no aparece su nombre deberá buscar en otro día
+4-. Si en cualquier menú del programa selecciona una opción no señalada el programa se reiniciara
