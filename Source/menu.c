@@ -250,7 +250,35 @@ seleccionarOpcionMenu (void)
 	  break;
 	case 5:
 //Mostrar todas las citas
+	printf("Mostrando registros");
+	printf("\nSeleccione el dia a visualizar: \n");
+	printf("1-. Lunes  2-. Martes  3-. Miercoles\n4-. Jueves  5-.Viernes  6-.Sabado\n");
+	scanf("%d",&auxiliar);
+	switch(auxiliar){
+	case 1:
+	mostrarRegistrosDia(&Lunes);
+	break;
+	case 2:
+	mostrarRegistrosDia(&Martes);
+	break;
+	case 3:
+	mostrarRegistrosDia(&Miercoles);
+	break;
+	case 4:
+	mostrarRegistrosDia(&Jueves);
+	break;
+	case 5:
+	mostrarRegistrosDia(&Viernes);
+	break;
+	case 6:
+	mostrarRegistrosDia(&Sabado);
+	break;
+	default:
+	printf("Opcion inexistente");
+	break;
+}
 	  break;
+
 	case 6:
 	  printf ("Ingrese el dia de la cita atendida\n");
 	  printf
