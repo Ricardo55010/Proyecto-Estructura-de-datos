@@ -45,7 +45,7 @@ seleccionarOpcionMenu (void)
 	  scanf ("%s", nombre);
 	  printf ("\nSeleccione el dia que quiere su cita:\n ");
 	  printf
-	    ("1-. Lunes     2-. Martes      3-.Miercoles\n4-. Jueves        5-. Viernes     6-. Sabado");
+	    ("1-. Lunes     2-. Martes      3-.Miercoles\n4-. Jueves        5-. Viernes     6-. Sabado: ");
 	  scanf ("%d", &auxiliar);
 	  switch (auxiliar)
 	    {
@@ -80,7 +80,7 @@ seleccionarOpcionMenu (void)
 	  scanf ("%s", nombre);
 	  printf ("\nSeleccione el dia de la cita: ");
 	  printf
-	    ("1-. Lunes	2-. Martes	3-.Miercoles\n4-. Jueves	5-. Viernes	6-. Sabado");
+	    ("1-. Lunes	2-. Martes	3-.Miercoles\n4-. Jueves	5-. Viernes	6-. Sabado: ");
 	  scanf ("%d", &auxiliar);
 	  switch (auxiliar)
 	    {
@@ -188,7 +188,7 @@ seleccionarOpcionMenu (void)
 	case 3:
 	  printf ("Ingrese el dia de la cita a cancelar\n");
 	  printf
-	    ("1-. Lunes	2-. Martes	3-.Miercoles\n4-. Jueves	5-. Viernes	6-. Sabado");
+	    ("1-. Lunes	2-. Martes	3-.Miercoles\n4-. Jueves	5-. Viernes	6-. Sabado: ");
 	  scanf ("%d", &auxiliar);
 	  printf ("\nIngrese su nombre por favor: ");
 	  scanf ("%s", nombre);
@@ -223,7 +223,7 @@ seleccionarOpcionMenu (void)
 	  printf
 	    ("\nSeleccione el dia que escogio previamente para su cita:\n ");
 	  printf
-	    ("1-. Lunes     2-. Martes      3-.Miercoles\n4-. Jueves        5-. Viernes     6-. Sabado");
+	    ("1-. Lunes     2-. Martes      3-.Miercoles\n4-. Jueves        5-. Viernes     6-. Sabado: ");
 	  scanf ("%d", &auxiliar);
 	  switch (auxiliar)
 	    {
@@ -255,7 +255,7 @@ seleccionarOpcionMenu (void)
 	  printf ("Mostrando registros");
 	  printf ("\nSeleccione el dia a visualizar: \n");
 	  printf
-	    ("1-. Lunes  2-. Martes  3-. Miercoles\n4-. Jueves  5-.Viernes  6-.Sabado\n");
+	    ("1-. Lunes  2-. Martes  3-. Miercoles\n4-. Jueves  5-.Viernes  6-.Sabado: ");
 	  scanf ("%d", &auxiliar);
 	  switch (auxiliar)
 	    {
@@ -286,7 +286,7 @@ seleccionarOpcionMenu (void)
 	case 6:
 	  printf ("Ingrese el dia de la cita atendida\n");
 	  printf
-	    ("1-. Lunes	2-. Martes	3-. MIercoles\n4-. Jueves	5-. Viernes	6-. Sabado");
+	    ("1-. Lunes	2-. Martes	3-. MIercoles\n4-. Jueves	5-. Viernes	6-. Sabado: ");
 	  scanf ("%d", &auxiliar);
 	  printf ("\nIngrese su nombre por favor: ");
 	  scanf ("%s", nombre);
