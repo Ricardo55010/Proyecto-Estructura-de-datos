@@ -220,9 +220,9 @@ buscarRegistroCola (struct cita *cita, char nombre[20])
 	  if (strcmp (cita->nombrePaciente[i], nombre) == 0)
 	    {
 	      mostrarRegistroSolo (i, cita);
-	      return 20;
 	    }
 	}
+      return 20;
     }
   return 0;
 }
