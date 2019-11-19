@@ -331,3 +331,15 @@ mostrarRegistrosDia (struct cita *cita)
     }
   return;
 }
+
+void rellenarCola(struct cita *cita){
+	char relleno[20]={'-','-','-','-'};
+	int j=0;
+	int i=0;
+	for(j=0;j!=20;j++){
+	for(i=0;i!=20;i++){
+	cita->nombrePaciente[j][i]=relleno[i];
+	}
+	}
+return;
+}
