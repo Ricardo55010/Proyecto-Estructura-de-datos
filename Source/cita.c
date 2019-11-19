@@ -315,19 +315,9 @@ void
 mostrarRegistrosDia (struct cita *cita)
 {
   int i = 0;
-  char estado[20] = { 'C', 'a', 'n', 'c', 'e', 'l', 'a', 'd', 'a' };
-  char estado1[20] = { 'A', 't', 'e', 'n', 'd', 'i', 'd', 'o' };
-
   for (i = 0; i != 20; i++)
     {
-      if (strcmp (cita->nombrePaciente[i], estado) == 0
-	  || strcmp (cita->nombrePaciente[i], estado1) == 0)
-	{
-	}
-      else
-	{
-	  mostrarRegistroSolo (i, cita);
-	}
+      mostrarRegistroSolo (i, cita);
     }
   return;
 }

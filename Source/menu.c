@@ -9,7 +9,7 @@ mostrar_menu (void)
   puts ("Seleccione una opcion por favor\n\n");
   puts ("1-. Agendar una cita\n2-. Consultar la cita.\n3-. Cancelar la cita");
   puts
-    ("4-. Modificar su cita\n5-. Mostrar todas las citas para el dia.\n6-. Cita atendida\n7-. Salir");
+    ("4-. Modificar su cita\n5-. Mostrar todas las citas para el dia.\n6-. Atender cita \n7-. Salir");
 }
 
 void
