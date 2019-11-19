@@ -31,12 +31,12 @@ seleccionarOpcionMenu (void)
   Viernes.n = 20;
   Sabado.n = 20;
 
-  rellenarCola(&Lunes);
-  rellenarCola(&Martes);
-  rellenarCola(&Miercoles);
-  rellenarCola(&Jueves);
-  rellenarCola(&Viernes);
-  rellenarCola(&Sabado);
+  rellenarCola (&Lunes);
+  rellenarCola (&Martes);
+  rellenarCola (&Miercoles);
+  rellenarCola (&Jueves);
+  rellenarCola (&Viernes);
+  rellenarCola (&Sabado);
 
   int opcion = 0;
   do
