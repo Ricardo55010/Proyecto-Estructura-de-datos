@@ -14,6 +14,7 @@ Una vez ejecutado el programa desplegará una serie de opciones disponibles para
 2. Consultar la cita: Ingresando el nombre del paciente y el día de la cita mostrara en pantalla el registro y la hora asignada
 3. Cancelar la cita: Ingresando el nombre del paciente y el día de la cita se etiquetara el registro con la leyenda **CANCELADA**
 4. Modificar la cita: Ingresando el nombre del paciente y el día de la cita podrá cambiar el nombre del paciente
+5. Mostrar todas las citas del día: Ingresando el día de la cita desplegará en pantalla todas las citas del día
 6. Atender cita: Ingresando el día de la cita se etiquetara el al primer registro, no cancelado o atendido, con la leyenda ***ATENDIDA*** 
 7. Salir: terminará la ejecución del programa
 #### *Casos especiales*
