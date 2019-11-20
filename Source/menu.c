@@ -295,27 +295,25 @@ seleccionarOpcionMenu (void)
 	  printf
 	    ("1-. Lunes	2-. Martes	3-. MIercoles\n4-. Jueves	5-. Viernes	6-. Sabado: ");
 	  scanf ("%d", &auxiliar);
-	  printf ("\nIngrese su nombre por favor: ");
-	  scanf ("%s", nombre);
 	  switch (auxiliar)
 	    {
 	    case 1:
-	      atenderCita (&Lunes, nombre);
+	      atenderCita (&Lunes);
 	      break;
 	    case 2:
-	      atenderCita (&Martes, nombre);
+	      atenderCita (&Martes);
 	      break;
 	    case 3:
-	      atenderCita (&Miercoles, nombre);
+	      atenderCita (&Miercoles);
 	      break;
 	    case 4:
-	      atenderCita (&Jueves, nombre);
+	      atenderCita (&Jueves);
 	      break;
 	    case 5:
-	      atenderCita (&Viernes, nombre);
+	      atenderCita (&Viernes);
 	      break;
 	    case 6:
-	      atenderCita (&Sabado, nombre);
+	      atenderCita (&Sabado);
 	      break;
 	    default:
 	      break;

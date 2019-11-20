@@ -15,7 +15,7 @@ int actualizarRegistroCola (struct cita *);
 int buscarRegistroCola (struct cita *, char[20]);
 void mostrarRegistroSolo (int, struct cita *);
 void eliminarRegistroCola (struct cita *, char[20]);
-void atenderCita (struct cita *, char[20]);
+void atenderCita (struct cita *);
 void mostrarRegistrosDia (struct cita *);
 void rellenarCola (struct cita *);
 #endif

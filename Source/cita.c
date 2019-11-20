@@ -270,45 +270,44 @@ eliminarRegistroCola (struct cita *cita, char nombre[20])
 }
 
 void
-atenderCita (struct cita *cita, char nombre[20])
+atenderCita (struct cita *cita)
 {
   int posicion = 0;
-  char estado[20] = { 'A', 't', 'e', 'n', 'd', 'i', 'd', 'o' };
-  if (cita->nombrePaciente == NULL)
+  int esElPrimero = 0;
+  int i = 0;
+  int k = 0;
+  char estado2[20] = { '-', '-', '-', '-' };
+  char nombre[20];
+  char estado1[20] = { 'C', 'a', 'n', 'c', 'e', 'l', 'a', 'd', 'a' };
+  char estado[20] = { 'A', 't', 'e', 'n', 'd', 'i', 'd', 'a' };
+  for (i = 0; i != 20; i++)
     {
-      return;
-    }
-  posicion = buscarRegistroCola (cita, nombre);
-  if (posicion == -1)
-    {
-      printf ("\nCita no encontrada\n");
-      return;
-    }
-  if (posicion > -1 && posicion < 20)
-    {
-      int i = 0;
-      for (i = 0; i != 20; i++)
+      if (esElPrimero == 0)
 	{
-	  cita->nombrePaciente[posicion][i] = estado[i];
+	  for (k = 0; k != 20; k++)
+	    {
+	      nombre[k] = cita->nombrePaciente[i][k];
+	    }
+	  if (strcmp (estado2, nombre) == 0)
+	    {
+	      return;
+	    }
+	  if (strcmp (nombre, estado) != 0 && strcmp (nombre, estado1) != 0)
+	    {
+	      esElPrimero = 1;
+	      posicion = i;
+	    }
 	}
-      printf ("\nCita atendida\n");
-      return;
     }
-  if (posicion == 20)
+  if (esElPrimero == 0)
     {
-      int i = 0;
-      int tmp = 0;
-      printf
-	("\nHay mas de una cita registrada con el mismo nombre, favor de poner cual cita es la de usted :");
-      scanf ("%d", &tmp);
-      tmp = tmp - 1;
-      for (i = 0; i != 20; i++)
-	{
-	  cita->nombrePaciente[posicion][i] = estado[i];
-	}
-      printf ("\nCita atendida\n");
       return;
     }
+  for (i = 0; i != 20; i++)
+    {
+      cita->nombrePaciente[posicion][i] = estado[i];
+    }
+  return;
 }
 
 void
