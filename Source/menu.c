@@ -149,6 +149,25 @@ mostrarMenu (struct cita *Lunes, struct cita *Martes, struct cita *Miercoles,
 }
 
 void
+consultarMenu1 (int pos, char nombre[20], struct cita *cita)
+{
+  pos = buscarRegistroCola (cita, nombre);
+  if (pos == -1)
+    {
+      printf ("\nNo existe ese nombre en este dia\n");
+    }
+  if (pos > -1 && pos < 20)
+    {
+      printf ("\nCita encontrada\n");
+      mostrarRegistroSolo (pos, cita);
+    }
+  if (pos == 20)
+    {
+      printf ("\nCitas encontradas con el mismo nombre");
+    }
+}
+
+void
 consultarMenu (struct cita *Lunes, struct cita *Martes,
 	       struct cita *Miercoles, struct cita *Jueves,
 	       struct cita *Viernes, struct cita *Sabado)
@@ -165,100 +184,22 @@ consultarMenu (struct cita *Lunes, struct cita *Martes,
   switch (auxiliar)
     {
     case 1:
-      pos = buscarRegistroCola (Lunes, nombre);
-      if (pos == -1)
-	{
-	  printf ("\nNo existe ese nombre en este dia\n");
-	}
-      if (pos > -1 && pos < 20)
-	{
-	  printf ("\nCita encontrada\n");
-	  mostrarRegistroSolo (pos, Lunes);
-	}
-      if (pos == 20)
-	{
-	  printf ("\nCitas encontradas con el mismo nombre");
-	}
+      consultarMenu1 (pos, nombre, Lunes);
       break;
     case 2:
-      pos = buscarRegistroCola (Martes, nombre);
-      if (pos == -1)
-	{
-	  printf ("\nNo existe ese nombre en este dia\n");
-	}
-      if (pos > -1 && pos < 20)
-	{
-	  printf ("\nCita encontrada\n");
-	  mostrarRegistroSolo (pos, Martes);
-	}
-      if (pos == 20)
-	{
-	  printf ("\nCitas encontradas con el mismo nombre");
-	}
+      consultarMenu1 (pos, nombre, Martes);
       break;
     case 3:
-      pos = buscarRegistroCola (Miercoles, nombre);
-      if (pos == -1)
-	{
-	  printf ("\nNo existe ese nombre en este dia\n");
-	}
-      if (pos > -1 && pos < 20)
-	{
-	  printf ("\nCita encontrada\n");
-	  mostrarRegistroSolo (pos, Miercoles);
-	}
-      if (pos == 20)
-	{
-	  printf ("\nCitas encontradas con el mismo nombre");
-	}
+      consultarMenu1 (pos, nombre, Miercoles);
       break;
     case 4:
-      pos = buscarRegistroCola (Jueves, nombre);
-      if (pos == -1)
-	{
-	  printf ("\nNo existe ese nombre en este dia\n");
-	}
-      if (pos > -1 && pos < 20)
-	{
-	  printf ("\nCita encontrada\n");
-	  mostrarRegistroSolo (pos, Jueves);
-	}
-      if (pos == 20)
-	{
-	  printf ("\nCitas encontradas con el mismo nombre");
-	}
+      consultarMenu1 (pos, nombre, Jueves);
       break;
     case 5:
-      pos = buscarRegistroCola (Viernes, nombre);
-      if (pos == -1)
-	{
-	  printf ("\nNo existe ese nombre en este dia\n");
-	}
-      if (pos > -1 && pos < 20)
-	{
-	  printf ("\nCita encontrada\n");
-	  mostrarRegistroSolo (pos, Viernes);
-	}
-      if (pos == 20)
-	{
-	  printf ("\nCitas encontradas con el mismo nombre");
-	}
+      consultarMenu1 (pos, nombre, Viernes);
       break;
     case 6:
-      pos = buscarRegistroCola (Sabado, nombre);
-      if (pos == -1)
-	{
-	  printf ("\nNo existe ese nombre en este dia\n");
-	}
-      if (pos > -1 && pos < 20)
-	{
-	  printf ("\nCita encontrada\n");
-	  mostrarRegistroSolo (pos, Sabado);
-	}
-      if (pos == 20)
-	{
-	  printf ("\nCitas encontradas con el mismo nombre");
-	}
+      consultarMenu1 (pos, nombre, Sabado);
       break;
     default:
       printf ("\nNo existe\n");

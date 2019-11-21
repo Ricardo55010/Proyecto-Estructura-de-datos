@@ -291,6 +291,7 @@ atenderCita (struct cita *cita)
 	    }
 	  if (strcmp (estado2, nombre) == 0)
 	    {
+	      printf ("\nCita no encontrada\n");
 	      return;
 	    }
 	  if (strcmp (nombre, estado) != 0 && strcmp (nombre, estado1) != 0)
@@ -302,12 +303,14 @@ atenderCita (struct cita *cita)
     }
   if (esElPrimero == 0)
     {
+      printf ("\nCita no encontrada\n");
       return;
     }
   for (i = 0; i != 20; i++)
     {
       cita->nombrePaciente[posicion][i] = estado[i];
     }
+  printf ("\nCita atendida\n");
   return;
 }
 
