@@ -76,11 +76,17 @@ void
 agendarMenu (struct cita *Lunes, struct cita *Martes, struct cita *Miercoles,
 	     struct cita *Jueves, struct cita *Viernes, struct cita *Sabado)
 {
-  char nombre[20];
+  char nombre[200];
   int auxiliar = 0;
-  printf ("Agendando cita\n");
-  printf ("Ingrese su nombre por favor: ");
-  scanf ("%s", nombre);
+  int ciclo = 0;
+  do
+    {
+      printf ("Agendando cita\n");
+      printf ("Ingrese su nombre por favor: ");
+      scanf ("%s", nombre);
+      ciclo = calcularLongitudCaracter (nombre);
+    }
+  while (ciclo == 1);
   printf ("\nSeleccione el dia que quiere su cita:\n ");
   printf
     ("1-. Lunes     2-. Martes      3-.Miercoles\n4-. Jueves        5-. Viernes     6-. Sabado: ");

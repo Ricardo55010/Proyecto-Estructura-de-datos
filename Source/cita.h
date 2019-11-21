@@ -18,4 +18,6 @@ void eliminarRegistroCola (struct cita *, char[20]);
 void atenderCita (struct cita *);
 void mostrarRegistrosDia (struct cita *);
 void rellenarCola (struct cita *);
+int calcularLongitudCaracter (char[20]);
+
 #endif
