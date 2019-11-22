@@ -5,7 +5,7 @@ void
 mostrar_menu (void)
 {
   puts
-    ("	Bienvenido al sistema de registro de citas del consultorio ''Similares''\n");
+    ("	\nBienvenido al sistema de registro de citas del consultorio ''Similares''\n");
   puts ("Seleccione una opcion por favor\n\n");
   puts ("1-. Agendar una cita\n2-. Consultar la cita.\n3-. Cancelar la cita");
   puts

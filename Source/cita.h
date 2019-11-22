@@ -9,7 +9,7 @@ struct cita
   int n;
   int tamano;
 };
-
+void mostrarAvisos (int);
 int agregarRegistroCola (struct cita *, char[200]);
 int actualizarRegistroCola (struct cita *);
 int buscarRegistroCola (struct cita *, char[200]);

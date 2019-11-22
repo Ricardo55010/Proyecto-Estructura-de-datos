@@ -1,4 +1,34 @@
 #include"cita.h"
+void
+mostrarAvisos (int retorno)
+{
+  if (retorno >= 0 && retorno <= 19)
+    {
+      printf ("Cita encontrada\n");
+    }
+  switch (retorno)
+    {
+    case -1:
+      printf ("Cita no encontrada\n");
+      break;
+    case -2:
+      printf ("No hay espacio en esta cita, por favor ingrese otra fecha\n");
+      break;
+    case -3:
+      printf ("Se ha actualizado el registro correctamente\n");
+      break;
+    case 20:
+      printf
+	("Existe mas de una cita con un nombre similar,favor de poner cual cita es la de usted: \n");
+      break;
+    case -4:
+      printf ("Cita cancelada con exito\n");
+      break;
+    case -5:
+      printf ("Cita atendida\n");
+      break;
+    }
+}
 
 int
 agregarRegistroCola (struct cita *cita, char nombre[200])
@@ -6,7 +36,7 @@ agregarRegistroCola (struct cita *cita, char nombre[200])
   int i = 0;
   if (cita == NULL)
     {
-      printf ("No se pudo encontrar la cita\n");
+      mostrarAvisos (-1);
       return 0;
     }
   else
@@ -14,8 +44,7 @@ agregarRegistroCola (struct cita *cita, char nombre[200])
 
       if (cita->n == 0)
 	{
-	  printf
-	    ("No hay espacio en esta cita, por favor ingrese en otra fecha\n");
+	  mostrarAvisos (-2);
 	  return 0;
 	}
       else
@@ -53,7 +82,7 @@ actualizarRegistroCola (struct cita *cita)
   n = buscarRegistroCola (cita, nombre);
   if (cita == NULL)
     {
-      printf ("No se pudo encontra la cita\n");
+      mostrarAvisos (-1);
       return 0;
     }
   else
@@ -62,7 +91,7 @@ actualizarRegistroCola (struct cita *cita)
       if (n == -1)
 
 	{
-	  printf ("Lo sentimos el elemento no existe \n");
+	  mostrarAvisos (-1);
 	  return 0;
 	}
 
@@ -70,7 +99,7 @@ actualizarRegistroCola (struct cita *cita)
 	{
 	  if (n != 20)
 	    {
-	      printf ("Se encontro el nombre a modificar\n");
+	      mostrarAvisos (n);
 	      do
 		{
 		  printf ("Ingrese el nuevo nombre para la cita\n");
@@ -83,13 +112,12 @@ actualizarRegistroCola (struct cita *cita)
 		{
 		  cita->nombrePaciente[n][i] = nombren[i];
 		}
-	      printf ("Se ha actualizado el registro correctamente\n");
+	      mostrarAvisos (-3);
 	      return 0;
 	    }
 	  else
 	    {
-	      printf
-		("Existe mas de una cita con un nombre similar\n Ingrese el numero del elemento que de sea actualizar\n");
+	      mostrarAvisos (20);
 	      scanf ("%i", &n);
 	      printf ("Ingrese el nuevo nombre para la cita\n");
 	      scanf ("%s", nombren);
@@ -99,7 +127,7 @@ actualizarRegistroCola (struct cita *cita)
 		{
 		  cita->nombrePaciente[n][i] = nombren[i];
 		}
-	      printf ("Se ha actualizado el registro correctamente\n");
+	      mostrarAvisos (-3);
 	      return 0;
 	    }
 	}
@@ -269,12 +297,13 @@ eliminarRegistroCola (struct cita *cita, char nombre[20])
   };
   if (cita->nombrePaciente == NULL)
     {
+      mostrarAvisos (-1);
       return;
     }
   posicion = buscarRegistroCola (cita, nombre);
   if (posicion == -1)
     {
-      printf ("\nCita no encontrada\n");
+      mostrarAvisos (-1);
       return;
     }
   if (posicion > -1 && posicion < 20)
@@ -284,22 +313,21 @@ eliminarRegistroCola (struct cita *cita, char nombre[20])
 	{
 	  cita->nombrePaciente[posicion][i] = estado[i];
 	}
-      printf ("\nCita cancelada con exito\n");
+      mostrarAvisos (-4);
       return;
     }
   if (posicion == 20)
     {
       int i = 0;
       int tmp = 0;
-      printf
-	("\nHay mas de una cita registrada con el mismo nombre, favor de poner cual cita es la de usted :");
       scanf ("%d", &tmp);
+      mostrarAvisos (20);
       tmp = tmp - 1;
       for (i = 0; i != 20; i++)
 	{
 	  cita->nombrePaciente[posicion][i] = estado[i];
 	}
-      printf ("\nCita cancelada con exito\n");
+      mostrarAvisos (-4);
       return;
     }
 }
@@ -331,7 +359,7 @@ atenderCita (struct cita *cita)
 	    }
 	  if (strcmp (estado2, nombre) == 0)
 	    {
-	      printf ("\nCita no encontrada\n");
+	      mostrarAvisos (-1);
 	      return;
 	    }
 	  if (strcmp (nombre, estado) != 0 && strcmp (nombre, estado1) != 0)
@@ -343,14 +371,14 @@ atenderCita (struct cita *cita)
     }
   if (esElPrimero == 0)
     {
-      printf ("\nCita no encontrada\n");
+      mostrarAvisos (-1);
       return;
     }
   for (i = 0; i != 20; i++)
     {
       cita->nombrePaciente[posicion][i] = estado[i];
     }
-  printf ("\nCita atendida\n");
+  mostrarAvisos (-5);
   return;
 }
 
