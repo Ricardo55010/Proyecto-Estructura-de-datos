@@ -22,4 +22,4 @@ Una vez ejecutado el programa desplegará una serie de opciones disponibles para
 2. Al momento de agendar si ya no hay espacio en el día seleccionado deberá buscar otro día
 3.Al momento de consultar si no aparece su nombre deberá buscar en otro día
 4. Si en cualquier menú del programa selecciona una opción no señalada el programa se reiniciara
-5. Si el usuario ingresa una cadena de carácteres con longitud mayor a 19, únicamente se almacenarán los primeros 19
+5. Si el usuario ingresa una cadena de carácteres con longitud mayor a 18, únicamente se almacenarán los primeros 18
