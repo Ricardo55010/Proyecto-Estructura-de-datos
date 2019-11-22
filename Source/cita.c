@@ -19,19 +19,19 @@ agregarRegistroCola (struct cita *cita, char nombre[200])
 	  return 0;
 	}
       else
-	memset (cita->nombrePaciente[20 - (cita->n)], 0, 25);
-      {
-	for (i = 0; i < 20; i++)
-	  {
-	    cita->nombrePaciente[20 - (cita->n)][i] = nombre[i];
-	  }
-	printf ("La cita ha sido agendada satisfactoriamente %s\n",
-		cita->nombrePaciente[20 - (cita->n)]);
-	mostrarRegistroSolo (20 - (cita->n), cita);
-	(cita->n)--;
+	{
+	  memset (cita->nombrePaciente[20 - (cita->n)], 0, 25);
+	  for (i = 0; i < 20; i++)
+	    {
+	      cita->nombrePaciente[20 - (cita->n)][i] = nombre[i];
+	    }
+	  printf ("La cita ha sido agendada satisfactoriamente %s\n",
+		  cita->nombrePaciente[20 - (cita->n)]);
+	  mostrarRegistroSolo (20 - (cita->n), cita);
+	  (cita->n)--;
 
-	return 0;
-      }
+	  return 0;
+	}
     }
 }
 
