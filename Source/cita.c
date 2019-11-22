@@ -68,12 +68,10 @@ actualizarRegistroCola (struct cita *cita)
 {
   int i = 0;
   int n;
-  int ciclo = 0;
   char nombre[20];
   char nombren[20];
   printf ("Ingrese el nombre de la persona que desea modificar\n");
   scanf ("%19s[^\n]", nombre);
-  while (ciclo == 1);
   n = buscarRegistroCola (cita, nombre);
   if (cita == NULL)
     {
@@ -94,13 +92,9 @@ actualizarRegistroCola (struct cita *cita)
 	  if (n != 20)
 	    {
 	      mostrarAvisos (n);
-	      do
-		{
 		  printf ("Ingrese el nuevo nombre para la cita\n");
-		  scanf ("%s", nombren);
-		  ciclo = calcularLongitudCaracter (nombren);
-		}
-	      while (ciclo == 1);
+		  scanf ("%19s[ ^\n]",nombren);
+		   calcularLongitudCaracter (nombren);
 	      for (i = 0; i < 20; i++)
 
 		{

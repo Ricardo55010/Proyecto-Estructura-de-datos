@@ -178,6 +178,7 @@ consultarMenu (struct cita *Lunes, struct cita *Martes,
   int auxiliar = 0;
   printf ("Ingrese su nombre por favor: ");
   scanf ("%19s[^\n]", nombre);
+  calcularLongitudCaracter (nombre);
   printf ("\nSeleccione el dia de la cita: ");
   printf
     ("1-. Lunes	2-. Martes	3-.Miercoles\n4-. Jueves	5-. Viernes	6-. Sabado: ");
@@ -220,6 +221,7 @@ cancelarMenu (struct cita *Lunes, struct cita *Martes, struct cita *Miercoles,
   scanf ("%d", &auxiliar);
   printf ("\nIngrese su nombre por favor: ");
   scanf ("%19s[^\n]", nombre);
+  calcularLongitudCaracter (nombre);
   switch (auxiliar)
     {
     case 1:
