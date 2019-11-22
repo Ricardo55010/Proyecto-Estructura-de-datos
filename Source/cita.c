@@ -49,7 +49,6 @@ agregarRegistroCola (struct cita *cita, char nombre[200])
 	}
       else
 	{
-	  memset (cita->nombrePaciente[20 - (cita->n)], 0, 25);
 	  for (i = 0; i < 20; i++)
 	    {
 	      cita->nombrePaciente[20 - (cita->n)][i] = nombre[i];
@@ -87,7 +86,6 @@ actualizarRegistroCola (struct cita *cita)
     }
   else
     {
-      memset (cita->nombrePaciente[20 - (cita->n)], 0, 25);
       if (n == -1)
 
 	{
@@ -193,39 +191,39 @@ mostrarRegistroSolo2 (int posicion, struct cita *cita)
   switch (posicion)
     {
     case 11:
-      printf ("Cita n° %d	Nombre: %s	Hora de cita: 16:00\n",
+      printf ("Cita n° %d	Nombre: %s	Hora de cita: 16:00 hrs\n",
 	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 12:
-      printf ("Cita n° %d	Nombre: %s	Hora de cita: 16:30\n",
+      printf ("Cita n° %d	Nombre: %s	Hora de cita: 16:30 hrs\n",
 	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 13:
-      printf ("Cita n° %d	Nombre: %s	Hora de cita: 17:00\n",
+      printf ("Cita n° %d	Nombre: %s	Hora de cita: 17:00 hrs\n",
 	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 14:
-      printf ("Cita n° %d	Nombre: %s	Hora de cita: 17:30\n",
+      printf ("Cita n° %d	Nombre: %s	Hora de cita: 17:30 hrs\n",
 	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 15:
-      printf ("Cita n° %d	Nombre: %s	Hora de cita: 18:00\n",
+      printf ("Cita n° %d	Nombre: %s	Hora de cita: 18:00 hrs\n",
 	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 16:
-      printf ("Cita n° %d	Nombre: %s	Hora de cita: 18:30\n",
+      printf ("Cita n° %d	Nombre: %s	Hora de cita: 18:30 hrs\n",
 	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 17:
-      printf ("Cita n° %d	Nombre: %s	Hora de cita: 19:00\n",
+      printf ("Cita n° %d	Nombre: %s	Hora de cita: 19:00 hrs\n",
 	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 18:
-      printf ("Cita n° %d	Nombre: %s	Hora de cita: 19:30\n",
+      printf ("Cita n° %d	Nombre: %s	Hora de cita: 19:30 hrs\n",
 	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     case 19:
-      printf ("Cita n° %d	Nombre: %s	Hora de cita: 20:00\n",
+      printf ("Cita n° %d	Nombre: %s	Hora de cita: 20:00 hrs\n",
 	      posicion + 1, cita->nombrePaciente[posicion]);
       break;
     }
@@ -415,9 +413,8 @@ int
 calcularLongitudCaracter (char nombre[200])
 {
   int longitud = strlen (nombre);
-  if (longitud > 20)
+  if (longitud > 19)
     {
-
       return 1;
     }
   return 0;
