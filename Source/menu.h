@@ -16,5 +16,5 @@ void mostrarMenu (struct cita *, struct cita *, struct cita *, struct cita *,
 		  struct cita *, struct cita *);
 void atenderMenu (struct cita *, struct cita *, struct cita *, struct cita *,
 		  struct cita *, struct cita *);
-void consultarMenu1 (int, char[200], struct cita *);
+void consultarMenu1 (int, char[20], struct cita *);
 #endif

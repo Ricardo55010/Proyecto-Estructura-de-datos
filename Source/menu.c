@@ -76,17 +76,12 @@ void
 agendarMenu (struct cita *Lunes, struct cita *Martes, struct cita *Miercoles,
 	     struct cita *Jueves, struct cita *Viernes, struct cita *Sabado)
 {
-  char nombre[200];
+  char nombre[20];
   int auxiliar = 0;
-  int ciclo = 0;
-  do
-    {
-      printf ("Agendando cita\n");
-      printf ("Ingrese su nombre por favor: ");
-      scanf ("%s", nombre);
-      ciclo = calcularLongitudCaracter (nombre);
-    }
-  while (ciclo == 1);
+  printf ("Agendando cita\n");
+  printf ("Ingrese su nombre por favor: ");
+  scanf ("%19s[^\n]", nombre);
+  calcularLongitudCaracter (nombre);
   printf ("\nSeleccione el dia que quiere su cita:\n ");
   printf
     ("1-. Lunes     2-. Martes      3-.Miercoles\n4-. Jueves        5-. Viernes     6-. Sabado: ");
@@ -178,11 +173,11 @@ consultarMenu (struct cita *Lunes, struct cita *Martes,
 	       struct cita *Miercoles, struct cita *Jueves,
 	       struct cita *Viernes, struct cita *Sabado)
 {
-  char nombre[200];
+  char nombre[20];
   int pos = 0;
   int auxiliar = 0;
   printf ("Ingrese su nombre por favor: ");
-  scanf ("%s", nombre);
+  scanf ("%19s[^\n]", nombre);
   printf ("\nSeleccione el dia de la cita: ");
   printf
     ("1-. Lunes	2-. Martes	3-.Miercoles\n4-. Jueves	5-. Viernes	6-. Sabado: ");
@@ -218,13 +213,13 @@ cancelarMenu (struct cita *Lunes, struct cita *Martes, struct cita *Miercoles,
 	      struct cita *Jueves, struct cita *Viernes, struct cita *Sabado)
 {
   int auxiliar = 0;
-  char nombre[200];
+  char nombre[20];
   printf ("Ingrese el dia de la cita a cancelar\n");
   printf
     ("1-. Lunes	2-. Martes	3-.Miercoles\n4-. Jueves	5-. Viernes	6-. Sabado: ");
   scanf ("%d", &auxiliar);
   printf ("\nIngrese su nombre por favor: ");
-  scanf ("%s", nombre);
+  scanf ("%19s[^\n]", nombre);
   switch (auxiliar)
     {
     case 1:

@@ -31,7 +31,7 @@ mostrarAvisos (int retorno)
 }
 
 int
-agregarRegistroCola (struct cita *cita, char nombre[200])
+agregarRegistroCola (struct cita *cita, char nombre[20])
 {
   int i = 0;
   if (cita == NULL)
@@ -69,14 +69,10 @@ actualizarRegistroCola (struct cita *cita)
   int i = 0;
   int n;
   int ciclo = 0;
-  char nombre[200];
-  char nombren[200];
-  do
-    {
-      printf ("Ingrese el nombre de la persona que desea modificar\n");
-      scanf ("%s", nombre);
-      ciclo = calcularLongitudCaracter (nombre);
-    }
+  char nombre[20];
+  char nombren[20];
+  printf ("Ingrese el nombre de la persona que desea modificar\n");
+  scanf ("%19s[^\n]", nombre);
   while (ciclo == 1);
   n = buscarRegistroCola (cita, nombre);
   if (cita == NULL)
@@ -412,9 +408,11 @@ rellenarCola (struct cita *cita)
 int
 calcularLongitudCaracter (char nombre[200])
 {
+  int colector = 0;
   int longitud = strlen (nombre);
-  if (longitud > 19)
+  if (longitud > 18)
     {
+      scanf ("%d", &colector);
       return 1;
     }
   return 0;
