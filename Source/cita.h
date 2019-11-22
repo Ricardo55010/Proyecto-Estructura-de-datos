@@ -10,16 +10,16 @@ struct cita
   int tamano;
 };
 
-int agregarRegistroCola (struct cita *, char[20]);
+int agregarRegistroCola (struct cita *, char[200]);
 int actualizarRegistroCola (struct cita *);
-int buscarRegistroCola (struct cita *, char[20]);
+int buscarRegistroCola (struct cita *, char[200]);
 void mostrarRegistroSolo (int, struct cita *);
 void mostrarRegistroSolo1 (int, struct cita *);
 void mostrarRegistroSolo2 (int, struct cita *);
-void eliminarRegistroCola (struct cita *, char[20]);
+void eliminarRegistroCola (struct cita *, char[200]);
 void atenderCita (struct cita *);
 void mostrarRegistrosDia (struct cita *);
 void rellenarCola (struct cita *);
-int calcularLongitudCaracter (char[20]);
+int calcularLongitudCaracter (char[200]);
 
 #endif

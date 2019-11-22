@@ -1,7 +1,7 @@
 #include"cita.h"
 
 int
-agregarRegistroCola (struct cita *cita, char nombre[20])
+agregarRegistroCola (struct cita *cita, char nombre[200])
 {
   int i = 0;
   if (cita == NULL)
@@ -19,18 +19,19 @@ agregarRegistroCola (struct cita *cita, char nombre[20])
 	  return 0;
 	}
       else
-	{
-	  for (i = 0; i < 20; i++)
-	    {
-	      cita->nombrePaciente[20 - (cita->n)][i] = nombre[i];
-	    }
-	  printf ("La cita ha sido agendada satisfactoriamente %s\n",
-		  cita->nombrePaciente[20 - (cita->n)]);
-	  mostrarRegistroSolo (20 - (cita->n), cita);
-	  (cita->n)--;
+	memset (cita->nombrePaciente[20 - (cita->n)], 0, 25);
+      {
+	for (i = 0; i < 20; i++)
+	  {
+	    cita->nombrePaciente[20 - (cita->n)][i] = nombre[i];
+	  }
+	printf ("La cita ha sido agendada satisfactoriamente %s\n",
+		cita->nombrePaciente[20 - (cita->n)]);
+	mostrarRegistroSolo (20 - (cita->n), cita);
+	(cita->n)--;
 
-	  return 0;
-	}
+	return 0;
+      }
     }
 }
 
@@ -57,6 +58,7 @@ actualizarRegistroCola (struct cita *cita)
     }
   else
     {
+      memset (cita->nombrePaciente[20 - (cita->n)], 0, 25);
       if (n == -1)
 
 	{
@@ -382,7 +384,7 @@ rellenarCola (struct cita *cita)
 }
 
 int
-calcularLongitudCaracter (char nombre[20])
+calcularLongitudCaracter (char nombre[200])
 {
   int longitud = strlen (nombre);
   if (longitud > 20)

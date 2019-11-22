@@ -178,7 +178,7 @@ consultarMenu (struct cita *Lunes, struct cita *Martes,
 	       struct cita *Miercoles, struct cita *Jueves,
 	       struct cita *Viernes, struct cita *Sabado)
 {
-  char nombre[20];
+  char nombre[200];
   int pos = 0;
   int auxiliar = 0;
   printf ("Ingrese su nombre por favor: ");
@@ -218,7 +218,7 @@ cancelarMenu (struct cita *Lunes, struct cita *Martes, struct cita *Miercoles,
 	      struct cita *Jueves, struct cita *Viernes, struct cita *Sabado)
 {
   int auxiliar = 0;
-  char nombre[20];
+  char nombre[200];
   printf ("Ingrese el dia de la cita a cancelar\n");
   printf
     ("1-. Lunes	2-. Martes	3-.Miercoles\n4-. Jueves	5-. Viernes	6-. Sabado: ");
