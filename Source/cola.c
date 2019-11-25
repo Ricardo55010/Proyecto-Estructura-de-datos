@@ -1,4 +1,4 @@
-#include"cita.h"
+#include"cola.h"
 void
 mostrarAvisos (int retorno)
 {
@@ -106,15 +106,19 @@ actualizarRegistroCola (struct cita *cita)
 	    }
 	  else
 	    {
-	      mostrarAvisos (20);
-	      scanf ("%i", &n);
+	      do
+		{
+		  mostrarAvisos (20);
+		  scanf ("%i", &n);
+		}
+	      while (n > 20 || n < 1);
 	      printf ("Ingrese el nuevo nombre para la cita\n");
 	      scanf ("%s", nombren);
 
 	      for (i = 0; i < 20; i++)
 
 		{
-		  cita->nombrePaciente[n][i] = nombren[i];
+		  cita->nombrePaciente[n - 1][i] = nombren[i];
 		}
 	      mostrarAvisos (-3);
 	      return 0;
@@ -280,7 +284,7 @@ buscarRegistroCola (struct cita *cita, char nombre[20])
 void
 eliminarRegistroCola (struct cita *cita, char nombre[20])
 {
-  int posicion;
+  int posicion = 0;
   char estado[20] = {
     'C', 'a', 'n', 'c', 'e', 'l', 'a', 'd', 'a'
   };

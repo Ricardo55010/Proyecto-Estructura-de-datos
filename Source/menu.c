@@ -1,4 +1,4 @@
-#include"cita.h"
+#include"cola.h"
 #include "menu.h"
 
 void
@@ -289,7 +289,6 @@ atenderMenu (struct cita *Lunes, struct cita *Martes, struct cita *Miercoles,
 	     struct cita *Jueves, struct cita *Viernes, struct cita *Sabado)
 {
   int auxiliar = 0;
-
   printf ("Ingrese el dia de la cita atendida\n");
   printf
     ("1-. Lunes	2-. Martes	3-. MIercoles\n4-. Jueves	5-. Viernes	6-. Sabado: ");
