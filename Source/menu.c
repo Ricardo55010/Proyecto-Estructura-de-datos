@@ -11,7 +11,7 @@ mostrar_menu (void)
   puts
     ("4-. Modificar su cita\n5-. Mostrar todas las citas para el dia.\n6-. Atender cita \n7-. Salir");
 }
-
+//hola
 void
 seleccionarOpcionMenu (void)
 {
